@@ -23,12 +23,12 @@ int reverse(int x) {
 
     for (int i = digit - 1; i >= 0; --i) {
         tmp = rv;
-        if (pow(10, i) * (str[i] - '0') > INT_MAX) {
+        if (pow(10, i) * (str[i] - '0') > INT32_MAX) {
             return 0;
         }
 
         sum = pow(10, i) * (str[i] - '0');
-        if (sum > INT_MAX - tmp) {
+        if (sum > INT32_MAX - tmp) {
             return 0;
         }
 
