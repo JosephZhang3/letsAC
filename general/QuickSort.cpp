@@ -15,7 +15,7 @@ void quick_sort(int q[], int l, int r) {
     for (int i = 0; i < n; i++) printf("%d ", q[i]);
     cout << endl;
 
-    // 区间仅包含一个元素时，停止递归
+    // 区间仅包含一个元素时，停止递归（重点!!!）
     if (l >= r) {
         cout << "l = " << l << ", r = " << r << " 时终止" << endl;
         return;
@@ -31,7 +31,7 @@ void quick_sort(int q[], int l, int r) {
         if (i < j) {
             swap(q[i], q[j]);
             cout << "交换了索引 " << i << "和" << j << endl;
-        } else{
+        } else {
             cout << endl;
         }
     }
@@ -45,9 +45,10 @@ void quick_sort(int q[], int l, int r) {
 int main() {
     int q[N];
 //    int n;
+    // & 取终端扫描到的第一个数存入变量n
     scanf("%d", &n);
-    // & 取数组索引位置i的地址，把从终端扫描到的数存入数组
     cout << "输入数组 ";
+    // 取终端扫描到的第一个数存入数组位置 q[i]
     for (int i = 0; i < n; i++) scanf("%d", &q[i]);
     quick_sort(q, 0, n - 1);
     // 不使用 & 则是直接取索引位置i的地址
