@@ -2,7 +2,6 @@
 
 using namespace std;
 const int N = 100010;
-int n;
 
 /**
  * 快速排序过程分析
@@ -12,7 +11,7 @@ int n;
  * @param r
  */
 void quick_sort(int q[], int l, int r) {
-    for (int i = 0; i < n; i++) printf("%d ", q[i]);
+    for (int i = 0; i < sizeof(*q); i++) printf("%d ", q[i]);
     cout << endl;
 
     // 区间仅包含一个元素时，停止递归（重点!!!）
@@ -44,7 +43,7 @@ void quick_sort(int q[], int l, int r) {
 
 int main() {
     int q[N];
-//    int n;
+    int n;
     // & 取终端扫描到的第一个数存入变量n
     scanf("%d", &n);
     cout << "输入数组 ";
