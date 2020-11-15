@@ -3,16 +3,13 @@
 using namespace std;
 
 int bs(int a[], int l, int r, int x) {
-    if (l > r) {
-        return -1;
-    }
-    // 中间点索引
+    if (l > r) return -1;
     int m = l + ((r - l) >> 1);
     if (a[m] < x) {
         return bs(a, m + 1, r, x);
     } else if (a[m] > x) {
         return bs(a, l, m - 1, x);
-    } else if (a[m] == x) {
+    } else {
         return m;
     }
 }
