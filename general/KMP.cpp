@@ -3,21 +3,34 @@
 
 using namespace std;
 
+/**
+ * 模式字符串匹配
+ * @param str
+ * @return
+ */
+
+/**
+ * 求最长公共前后缀长度
+ * @param str
+ * @return
+ */
 vector<int> getNext(const char *str) {
-    int len = strlen(str);               // 字符串长度
-    vector<int> next(len, 0);            // 保存结果，next[0]=0
+    int len = strlen(str);
+    // 保存结果的容器，默认容器每个元素的
+    vector<int> next(len, 0);
     for (int i = 1; i < len; i++) {
-        int k = next[i - 1];             // k 表示需要比较的位置，初始值为 next[i - 1]
-        while (k > 0 && str[i] != str[k]) // 比较，若不相等则继续分割，直到相等或k为0(即根本不含相同部分)
+        // k 表示需要比较的位置，初始值为 next[i - 1] 即 next[0] next[1] next[2] ...
+        int k = next[i - 1];
+        while (k > 0 && str[i] != str[k]) {
             k = next[k - 1];
-        if (str[i] == str[k])             // 若相等，则 next[i] = k + 1，否则为0，其中 k 为索引
+        }
+        if (str[i] == str[k])
             k++;
-        next[i] = k;                     // 更新 next[i]
+        next[i] = k;
     }
     return next;
 }
 
-// TODO 返回的是模式串最后一次出现的索引位置
 int KMP(char s[], char p[]) {
     if (strlen(s) == 0 || strlen(p) == 0) return -1;
 
@@ -41,13 +54,13 @@ int KMP(char s[], char p[]) {
 
 int main() {
     // test derive the next array
-    vector<int> ne = getNext("abaabca");
-    for (int i = 0; i < ne.size(); ++i) {
-        cout << ne[i] << "  ";
-    }
-    cout << endl;
+//    vector<int> ne = getNext("abaabca");
+//    for (int i = 0; i < ne.size(); ++i) {
+//        cout << ne[i] << "  ";
+//    }
+//    cout << endl;
 
-    cout << KMP("laflabcabdabcabcd", "xxxxxxx") << endl;
-    cout << KMP("laflabcabdabcabcd", "") << endl;
-    cout << KMP("laflabcabdabcabcd", "abca") << endl;
+//    cout << KMP("laflabcabdabcabcd", "xxxxxxx") << endl;
+//    cout << KMP("laflabcabdabcabcd", "") << endl;
+    cout << KMP("laflabcbbdabcabcd", "abca") << endl;
 }
