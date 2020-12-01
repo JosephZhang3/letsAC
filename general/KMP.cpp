@@ -4,9 +4,7 @@
 using namespace std;
 
 /**
- * 模式字符串匹配
- * @param str
- * @return
+ * 无回溯模式匹配算法
  */
 
 /**
