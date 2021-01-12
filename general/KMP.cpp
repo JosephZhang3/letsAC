@@ -1,5 +1,6 @@
 #include"iostream"
 #include<vector>
+#include"string"
 
 using namespace std;
 
@@ -12,8 +13,8 @@ using namespace std;
  * @param str
  * @return
  */
-vector<int> getNext(const char *str) {
-    int len = strlen(str);
+vector<int> getNext(string str) {
+    int len = str.length();
     // 保存结果的容器，默认容器每个元素的
     vector<int> next(len, 0);
     for (int i = 1; i < len; i++) {
@@ -29,18 +30,18 @@ vector<int> getNext(const char *str) {
     return next;
 }
 
-int KMP(char s[], char p[]) {
-    if (strlen(s) == 0 || strlen(p) == 0) return -1;
+int KMP(string s, string p) {
+    if (s.length() == 0 || p.length() == 0) return -1;
 
     vector<int> next = getNext(p);
     int k = 0;
     int res = -1;
-    for (int i = 0; i < (int) strlen(s); i++) {
+    for (int i = 0; i < (int) s.length(); i++) {
         while (k > 0 && s[i] != p[k])
             k = next[k - 1];
         if (s[i] == p[k])
             k++;
-        if (k == (int) strlen(p)) { // 模式串与主串完全匹配
+        if (k == (int) p.length()) { // 模式串与主串完全匹配
             res = i - k + 1;
             break;
             // 如果需要进行下一轮匹配（找模式串最后一次出现的位置），则用下行换掉break
