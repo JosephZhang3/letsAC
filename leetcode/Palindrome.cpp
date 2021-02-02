@@ -7,6 +7,7 @@ using namespace std;
 // 判断回文数字，要求不转换成字符串
 bool isPalindrome(int x){
     bool rt = true;
+	return rt;
 }
 
 int main(){
