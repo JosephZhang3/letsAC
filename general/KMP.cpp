@@ -45,7 +45,7 @@ int KMP(string s, string p) {
             res = i - k + 1;
             break;
             // 如果需要进行下一轮匹配（找模式串最后一次出现的位置），则用下行换掉break
-            //k = next[k-1];
+            // k = next[k-1];
         }
     }
     return res;

@@ -5,10 +5,6 @@ const int N = 100010;
 
 /**
  * 快速排序过程分析
- *
- * @param q
- * @param l
- * @param r
  */
 void quick_sort(int q[], int l, int r) {
     for (int i = 0; i < sizeof(*q); i++) printf("%d ", q[i]);
