@@ -1,6 +1,3 @@
-//
-// Created by zhangjianghao on 6/27/2020.
-//
 #include <sstream>
 #include "iostream"
 using namespace std;
@@ -8,13 +5,12 @@ using namespace std;
 /**
  * 三位数翻转
  * 思路：百位数字等于n模100，十位数字等于n除10再模10（除10去掉个位，模10得到十位），个位数字等于n模10
+ * 最后3个数字倒序输出
  *
  * simple test case
  * 127
  * 100
  * 999
- *
- * @return
  */
 int main(){
     int t;

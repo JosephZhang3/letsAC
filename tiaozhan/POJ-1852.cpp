@@ -63,6 +63,6 @@ int main()
         }
         solution();
     }
-    system("pause");
+    system("pause");// 暂停main函数，使控制台不退出
     return 0;
 }
