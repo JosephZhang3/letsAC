@@ -11,7 +11,7 @@ bool binary_search(int x)
 {
     int l = 0, r = n;
 
-    while (l <= r - 1)
+    while (l <= r - 1)// TODO deal [half,left] job
     {
         int i = l + (r - l) >> 2;
         if (k[i] == x)
