@@ -1,7 +1,8 @@
 //
 // Created by zhangjianghao on 6/27/2020.
 //
-#include<stdio.h>
+#include<iostream>
+using namespace std;
 #include "math.h"
 
 int main(){
